@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prospecção — Vecta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page-bg" aria-hidden="true">
+    <span class="bg-spot bg-spot-1"></span>
+    <span class="bg-spot bg-spot-2"></span>
+    <span class="bg-line bg-line-1"></span>
+    <span class="bg-line bg-line-2"></span>
+    <span class="bg-square bg-square-1"></span>
+    <span class="bg-square bg-square-2"></span>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="home.html" class="logo">VEC<span>TA</span></a>
+
+      <nav class="nav-links" aria-label="Navegação interna">
+  <a href="home.html">
+    <i data-lucide="home"></i>
+    <span>Início</span>
+  </a>
+
+  <a href="prospeccao.html" class="nav-active">
+    <i data-lucide="search"></i>
+    <span>Qualificação</span>
+  </a>
+
+  <a href="perfil.html">
+    <i data-lucide="user"></i>
+    <span>Perfil</span>
+  </a>
+
+  <a href="creditos.html">
+    <i data-lucide="credit-card"></i>
+    <span>Créditos</span>
+  </a>
+</nav>
+
+      <div class="menu-container">
+
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="menu-dropdown" id="menuDropdown">
+    <a href="perfil.html">Perfil</a>
+    <a href="#">Configurações</a>
+    <a href="index.html" class="menu-logout">Sair</a>
+  </div>
+
+</div>
+    </div>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">Módulo de IA</span>
+          <h1 class="home-title">Pesquisa de empresas</h1>
+          <p>
+            Utilize filtros inteligentes para encontrar empresas com maior potencial de conversão.
+          </p>
+        </div>
+
+        <div class="prospecting-layout">
+
+          <!-- FILTROS -->
+          <aside class="panel prospecting-sidebar">
+
+            <div class="home-card-header">
+              <h2>Filtros</h2>
+            </div>
+
+            <form class="internal-form">
+
+              <div class="form-row">
+                <label>CNAE</label>
+                <input type="text" placeholder="Ex.: 6201-5/01" />
+              </div>
+
+              <div class="form-row">
+                <label>UF</label>
+                <input type="text" placeholder="Ex.: MT" />
+              </div>
+
+              <div class="form-row">
+                <label>Município</label>
+                <input type="text" placeholder="Ex.: Cuiabá" />
+              </div>
+
+              <div class="form-row">
+                <label>Data de criação do CNPJ</label>
+                <input type="date" />
+              </div>
+
+              <button type="button" class="btn btn-primary full-btn">
+                Buscar com IA
+              </button>
+
+              <button type="reset" class="btn btn-secondary full-btn">
+                Limpar filtros
+              </button>
+
+            </form>
+          </aside>
+
+          <!-- RESULTADOS -->
+          <section class="prospecting-results">
+
+            <!-- CARD IA -->
+            <article class="panel prospecting-hero-card">
+
+              <div class="results-header panel">
+  <div class="results-header-top">
+    <div>
+      <span class="section-label">Resultados da IA</span>
+      <h2 class="results-title">
+        <strong>18</strong> empresas com maior potencial</h2>
+      <p><p>
+A IA identificou empresas com maior probabilidade de conversão com base nos filtros aplicados.
+</p></p>
+    </div>
+    <span class="panel-status">Atualizado agora</span>
+  </div>
+</div>
+
+            </article>
+
+            <!-- LISTA DE RESULTADOS -->
+            <div class="prospecting-grid">
+
+              <article class="panel prospect-card">
+                <div class="lead-header">
+                  <div>
+                    <h3>Nova Era Tecnologia Ltda</h3>
+                    <p>CNAE 6201-5/01 • Cuiabá/MT</p>
+                  </div>
+                  <span class="status">Alta aderência</span>
+                </div>
+
+                <div class="prospect-meta">
+                  <div class="mini-field">
+                    <span>Fundação</span>
+                    <strong>2019</strong>
+                  </div>
+
+                  <div class="mini-field">
+                    <span>Porte</span>
+                    <strong>Médio</strong>
+                  </div>
+                </div>
+
+                <div class="lead-contact">
+                  <span class="contact-pill">contato@novaera.com</span>
+                  <span class="contact-pill">(65) 3333-0001</span>
+                </div>
+              </article>
+
+              <article class="panel prospect-card">
+                <div class="lead-header">
+                  <div>
+                    <h3>Centro Oeste Soluções</h3>
+                    <p>CNAE 7020-4/00 • Várzea Grande/MT</p>
+                  </div>
+                  <span class="status">Compatível</span>
+                </div>
+
+                <div class="prospect-meta">
+                  <div class="mini-field">
+                    <span>Fundação</span>
+                    <strong>2020</strong>
+                  </div>
+
+                  <div class="mini-field">
+                    <span>Porte</span>
+                    <strong>Pequeno</strong>
+                  </div>
+                </div>
+
+                <div class="lead-contact">
+                  <span class="contact-pill">comercial@cosolucoes.com</span>
+                  <span class="contact-pill">(65) 3333-0002</span>
+                </div>
+              </article>
+
+              <article class="panel prospect-card">
+                <div class="lead-header">
+                  <div>
+                    <h3>Prime Gestão Industrial</h3>
+                    <p>CNAE 7490-1/04 • Rondonópolis/MT</p>
+                  </div>
+                  <span class="status">Boa chance</span>
+                </div>
+
+                <div class="prospect-meta">
+                  <div class="mini-field">
+                    <span>Fundação</span>
+                    <strong>2018</strong>
+                  </div>
+
+                  <div class="mini-field">
+                    <span>Porte</span>
+                    <strong>Médio</strong>
+                  </div>
+                </div>
+
+                <div class="lead-contact">
+                  <span class="contact-pill">atendimento@prime.com</span>
+                  <span class="contact-pill">(66) 3333-0003</span>
+                </div>
+              </article>
+
+            </div>
+
+          </section>
+        </div>
+
+      </div>
+    </section>
+  </main>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menuDropdown");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  // fechar clicando fora
+  window.addEventListener("click", function(e) {
+    const menu = document.getElementById("menuDropdown");
+    const button = document.querySelector(".menu-toggle");
+
+    if (!button.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

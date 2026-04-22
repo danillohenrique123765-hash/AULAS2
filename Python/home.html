@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home — Vecta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <span class="bg-spot bg-spot-1"></span>
+    <span class="bg-spot bg-spot-2"></span>
+    <span class="bg-line bg-line-1"></span>
+    <span class="bg-line bg-line-2"></span>
+    <span class="bg-square bg-square-1"></span>
+    <span class="bg-square bg-square-2"></span>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="home.html" class="logo">VEC<span>TA</span></a>
+
+      <nav class="nav-links" aria-label="Navegação interna">
+  <a href="home.html" class="nav-active">
+    <i data-lucide="home"></i>
+    <span>Início</span>
+  </a>
+
+  <a href="prospeccao.html">
+    <i data-lucide="search"></i>
+    <span>Qualificação</span>
+  </a>
+
+  <a href="perfil.html">
+    <i data-lucide="user"></i>
+    <span>Perfil</span>
+  </a>
+
+  <a href="creditos.html">
+    <i data-lucide="credit-card"></i>
+    <span>Créditos</span>
+  </a>
+</nav>
+
+    <div class="menu-container">
+
+  <button class="menu-toggle" onclick="toggleMenu()">
+     <span></span>
+     <span></span>
+     <span></span>
+  </button>
+
+  <div class="menu-dropdown" id="menuDropdown">
+    <a href="perfil.html">Perfil</a>
+    <a href="#">Configurações</a>
+    <a href="index.html" class="menu-logout">Sair</a>
+  </div>
+
+</div>
+
+    </div>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Área interna</span>
+          <h1 class="home-title">Central de Conexão </h1>
+          <p>
+            Retome suas buscas, acompanhe o uso da conta e inicie uma nova prospecção com filtros inteligentes.
+          </p>
+        </div>
+
+        <div class="home-grid home-grid-dashboard">
+          <article class="panel home-card home-hero-card">
+            <div class="home-card-header">
+              <div>
+                <h2>Iniciar nova prospecção</h2>
+                <p class="card-description">
+                  Encontre empresas com maior aderência ao seu perfil comercial usando filtros por CNAE, localização e data de abertura.
+                </p>
+              </div>
+              <span class="panel-status">Pronto para uso</span>
+            </div>
+
+            <div class="hero-card-actions">
+              <a href="prospeccao.html" class="btn btn-primary">Buscar empresas com IA</a>
+              <a href="#" class="btn btn-secondary">Ver histórico</a>
+            </div>
+
+            <div class="hero-card-highlights">
+              <div class="mini-field">
+                <span>Última busca</span>
+                <strong>CNAE 6201-5/01 — Cuiabá/MT</strong>
+              </div>
+
+              <div class="mini-field">
+                <span>Resultados recentes</span>
+                <strong>12 empresas encontradas</strong>
+              </div>
+
+              <div class="mini-field">
+                <span>Filtro favorito</span>
+                <strong>Tecnologia • Mato Grosso</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel home-card account-card">
+            <div class="home-card-header">
+              <h2>Uso da conta</h2>
+            </div>
+
+            <div class="account-usage-grid">
+              <div class="mini-field">
+                <span>Plano atual</span>
+                <strong>Growth</strong>
+              </div>
+
+              <div class="mini-field">
+                <span>Créditos restantes</span>
+                <strong>420</strong>
+              </div>
+
+              <div class="mini-field">
+                <span>Buscas no mês</span>
+                <strong>58</strong>
+              </div>
+
+              <div class="mini-field">
+                <span>Renovação</span>
+                <strong>12 dias</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel home-card recent-searches-card">
+            <div class="home-card-header">
+              <h2>Últimas prospecções</h2>
+            </div>
+
+            <div class="activity-list">
+              <div class="activity-item">
+                <div>
+                  <strong>CNAE 6201-5/01 — Cuiabá/MT</strong>
+                  <p>Busca realizada hoje às 09:42</p>
+                </div>
+                <span class="activity-badge">12 empresas</span>
+              </div>
+
+              <div class="activity-item">
+                <div>
+                  <strong>Serviços empresariais — Várzea Grande/MT</strong>
+                  <p>Busca realizada ontem às 16:18</p>
+                </div>
+                <span class="activity-badge">8 empresas</span>
+              </div>
+
+              <div class="activity-item">
+                <div>
+                  <strong>Indústria — Rondonópolis/MT</strong>
+                  <p>Busca realizada em 18/04 às 11:05</p>
+                </div>
+                <span class="activity-badge">23 empresas</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel home-card quick-search-card">
+            <div class="home-card-header">
+              <div>
+                <h2>Busca rápida</h2>
+                <p class="card-description">
+                  Faça uma consulta rápida com os filtros mais usados.
+                </p>
+              </div>
+            </div>
+
+            <form class="internal-form">
+              <div class="form-row">
+                <label for="cnae">CNAE</label>
+                <input type="text" id="cnae" placeholder="Ex.: 4520-0/01" />
+              </div>
+
+              <div class="form-row">
+                <label for="estado">UF</label>
+                <input type="text" id="estado" placeholder="Ex.: MT" />
+              </div>
+
+              <div class="form-row">
+                <label for="cidade">Município</label>
+                <input type="text" id="cidade" placeholder="Ex.: Cuiabá" />
+              </div>
+
+              <button type="button" class="btn btn-primary full-btn">Pesquisar</button>
+            </form>
+          </article>
+
+          <article class="panel home-card profile-summary-card">
+            <div class="home-card-header">
+              <h2>Perfil do usuário</h2>
+            </div>
+
+            <div class="profile-summary">
+              <div class="profile-avatar large">DH</div>
+
+              <div class="profile-summary-info">
+                <strong>Danillo Henrique</strong>
+                <span>Conta Growth</span>
+                <span>Autenticação em 2 fatores: desativada</span>
+              </div>
+            </div>
+
+            <div class="quick-actions">
+              <a href="perfil.html" class="btn btn-secondary full-btn">Ver perfil completo</a>
+            </div>
+          </article>
+
+          <article class="panel home-card next-steps-card">
+            <div class="home-card-header">
+              <h2>Próximos passos</h2>
+            </div>
+
+            <div class="next-steps-list">
+              <div class="step-item">
+                <span class="step-dot"></span>
+                <p>Complete seus dados de perfil</p>
+              </div>
+              <div class="step-item">
+                <span class="step-dot"></span>
+                <p>Ative a autenticação em dois fatores</p>
+              </div>
+              <div class="step-item">
+                <span class="step-dot"></span>
+                <p>Salve sua primeira prospecção</p>
+              </div>
+              <div class="step-item">
+                <span class="step-dot"></span>
+                <p>Configure preferências de conta</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById("menuDropdown");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  // fechar clicando fora
+  window.addEventListener("click", function(e) {
+    const menu = document.getElementById("menuDropdown");
+    const button = document.querySelector(".menu-toggle");
+
+    if (!button.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>
