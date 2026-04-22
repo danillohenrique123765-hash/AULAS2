@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados Pessoais — Vecta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-bg" aria-hidden="true">
+    <span class="bg-spot bg-spot-1"></span>
+    <span class="bg-spot bg-spot-2"></span>
+    <span class="bg-line bg-line-1"></span>
+    <span class="bg-line bg-line-2"></span>
+    <span class="bg-square bg-square-1"></span>
+    <span class="bg-square bg-square-2"></span>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="home.html" class="logo">VEC<span>TA</span></a>
+
+      <nav class="nav-links" aria-label="Navegação interna">
+        <a href="home.html">
+          <i data-lucide="home"></i>
+          <span>Início</span>
+        </a>
+
+        <a href="prospeccao.html">
+          <i data-lucide="search"></i>
+          <span>Qualificação</span>
+        </a>
+
+        <a href="creditos.html" class="nav-active">
+          <i data-lucide="credit-card"></i>
+          <span>Créditos</span>
+        </a>
+        <a href="favoritos.html">
+    <i data-lucide="heart"></i>
+    <span>Favoritos</span>
+  </a>
+      </nav>
+
+      <div class="menu-container">
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="menu-dropdown" id="menuDropdown">
+          <a href="perfil.html" class="menu-item">
+            <i data-lucide="settings"></i>
+            <span>Configurações</span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="user"></i>
+            <span>Perfil</span>
+          </a>
+
+          <a href="suporte.html" class="menu-item">
+            <i data-lucide="life-buoy"></i>
+            <span>Suporte</span>
+          </a>
+
+          <a href="index.html" class="menu-item logout">
+            <i data-lucide="log-out"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="section">
+      <div class="container container-wide">
+
+        <!-- HEADER -->
+        <div class="panel profile-header animate-up">
+          <div class="profile-header-left">
+            <div class="profile-avatar">
+              <img src="https://i.pravatar.cc/120" alt="Foto do usuário">
+            </div>
+
+            <div class="profile-info">
+              <div class="profile-name-row">
+                <h2>Danillo Henrique</h2>
+                <span class="status-badge active">Ativo</span>
+              </div>
+
+              <p class="profile-role">Plano Growth</p>
+
+              <div class="profile-badges">
+                <span class="badge-credit">
+  💳 <span id="creditosUsuario">120</span> créditos
+</span>
+
+                <span class="badge-plan">Growth</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-header-actions">
+            <button class="btn btn-primary">Comprar créditos</button>
+            <button class="btn btn-secondary">Gerenciar plano</button>
+            <button class="btn btn-outline btn-sm">Upgrade</button>
+          </div>
+        </div>
+
+        <!-- LAYOUT PRINCIPAL -->
+        <div class="profile-layout">
+
+          <!-- COLUNA PRINCIPAL -->
+          <div class="profile-main-column">
+
+            <!-- FORMULÁRIO -->
+            <div class="panel profile-form animate-up">
+              <div class="section-heading">
+                <span class="section-label">Dados Pessoais</span>
+                <h2>Seus dados</h2>
+                <p class="section-helper-text">
+                  Atualize suas informações básicas e mantenha sua conta organizada.
+                </p>
+              </div>
+
+              <form class="internal-form">
+                <div class="form-grid">
+                  <div class="form-row">
+                    <label>Nome</label>
+                    <input type="text" value="Danillo Henrique">
+                  </div>
+
+                  <div class="form-row">
+                    <label>Email</label>
+                    <input type="email" value="danillo@email.com">
+                  </div>
+
+                  <div class="form-row">
+                    <label>Telefone</label>
+                    <input type="text" placeholder="(00) 00000-0000">
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button class="btn btn-primary btn-lg" type="button">Salvar altualizações</button>
+                  <button class="btn btn-secondary btn-lg" type="button">Cancelar</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- INSIGHTS -->
+            <div class="panel ai-insights-card animate-up">
+              <div class="card-top">
+                <div>
+                  <span class="section-label">Insights da IA</span>
+                  <h3>Recomendações automáticas</h3>
+                </div>
+                <span class="panel-status">Analisando</span>
+              </div>
+
+              <div class="insights-list">
+                <div class="insight-item">
+                  <i data-lucide="sparkles"></i>
+                  <p>Você consumiu <strong>40% da sua cota mensal</strong> de créditos.</p>
+                </div>
+
+                <div class="insight-item">
+                  <i data-lucide="trending-up"></i>
+                  <p>Dica: <strong>leads de tecnologia</strong> têm maior conversão hoje.</p>
+                </div>
+
+                <div class="insight-item warning">
+                  <i data-lucide="alert-triangle"></i>
+                  <p>Mantenha saldo disponível para não interromper desbloqueios de leads.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- HISTÓRICO -->
+            <div class="panel recent-activity-card animate-up">
+              <div class="card-top">
+                <div>
+                  <span class="section-label">Atividade</span>
+                  <h3>Ações recentes</h3>
+                </div>
+              </div>
+
+              <div class="activity-list">
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <i data-lucide="unlock"></i>
+                  </div>
+                  <div>
+                    <strong>Lead desbloqueado</strong>
+                    <p>Nova Era Tecnologia Ltda — hoje</p>
+                  </div>
+                </div>
+
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <i data-lucide="star"></i>
+                  </div>
+                  <div>
+                    <strong>Empresa favoritada</strong>
+                    <p>Centro Oeste Soluções — hoje</p>
+                  </div>
+                </div>
+
+                <div class="activity-item">
+                  <div class="activity-icon">
+                    <i data-lucide="search"></i>
+                  </div>
+                  <div>
+                    <strong>Pesquisa realizada</strong>
+                    <p>Filtro por tecnologia em Cuiabá/MT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- COLUNA LATERAL -->
+          <aside class="profile-side-column">
+
+            <!-- RESUMO DA CONTA -->
+            <div class="panel account-summary animate-up">
+              <div class="card-top">
+                <div>
+                  <span class="section-label">Resumo</span>
+                  <h3>Resumo da conta</h3>
+                </div>
+              </div>
+
+            <nav class="nav-links" aria-label="Navegação interna">
+
+              <div class="summary-grid">
+                <div class="summary-card hover-lift">
+                  <div class="summary-icon">
+                    <i data-lucide="badge-check"></i>
+                  </div>
+                  <span>Plano atual</span>
+                  <strong>Growth</strong>
+                </div>
+
+                <div class="summary-card hover-lift">
+                  <div class="summary-icon">
+                    <i data-lucide="wallet"></i>
+                  </div>
+                  <span>Créditos</span>
+                  <strong>120</strong>
+                </div>
+
+                <div class="summary-card hover-lift">
+                  <div class="summary-icon">
+                    <i data-lucide="star"></i>
+                  </div>
+                  <span>Favoritos</span>
+                  <a href="favoritos.html"></a>
+                  <strong>14</strong>
+                </div>
+
+                <div class="summary-card hover-lift">
+                  <div class="summary-icon">
+                    <i data-lucide="unlock"></i>
+                  </div>
+                  <span>Leads desbloqueados</span>
+                  <strong>32</strong>
+                  </nav>
+                </div>
+              </div>
+            </div>
+
+            <!-- USO DE CRÉDITOS -->
+            <div class="panel wallet-panel animate-up">
+              <div class="card-top">
+                <div>
+                  <span class="section-label">Carteira</span>
+                  <h3>Uso de créditos</h3>
+                </div>
+                <span class="credit-count">120 / 200</span>
+              </div>
+
+              <div class="credit-progress">
+                <div class="credit-progress-fill" style="width: 60%;"></div>
+              </div>
+
+              <p class="wallet-helper">
+                Você ainda possui <strong>80 créditos disponíveis</strong> antes de atingir o limite atual.
+              </p>
+
+              <div class="credit-alert">
+                <i data-lucide="shield-alert"></i>
+                <span>Conta saudável. Recomendamos recarga antes de chegar a 20%.</span>
+              </div>
+
+              <div class="wallet-actions">
+                <button class="btn btn-primary full-btn">Comprar créditos</button>
+                <button class="btn btn-secondary full-btn">Ver histórico</button>
+              </div>
+            </div>
+
+          </aside>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuDropdown");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      lucide.createIcons();
+    }
+
+    window.addEventListener("click", function(e) {
+      const menu = document.getElementById("menuDropdown");
+      const button = document.querySelector(".menu-toggle");
+
+      if (menu && button && !button.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+
+    lucide.createIcons();
+
+
+  function atualizarCreditosUI() {
+    const creditos = localStorage.getItem("creditos");
+    const el = document.getElementById("creditosUsuario");
+
+    if (el && creditos) {
+      el.innerText = creditos;
+    }
+  }
+
+  function inicializarCreditos() {
+    if (!localStorage.getItem("creditos")) {
+      localStorage.setItem("creditos", "120");
+    }
+  }
+
+  inicializarCreditos();
+  atualizarCreditosUI();
+</script>
+  </script>
+
+</body>
+</html>

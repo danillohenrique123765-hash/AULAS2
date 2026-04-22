@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favoritos — Vecta</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="page-bg" aria-hidden="true">
+    <span class="bg-spot bg-spot-1"></span>
+    <span class="bg-spot bg-spot-2"></span>
+    <span class="bg-line bg-line-1"></span>
+    <span class="bg-line bg-line-2"></span>
+    <span class="bg-square bg-square-1"></span>
+    <span class="bg-square bg-square-2"></span>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="home.html" class="logo">VEC<span>TA</span></a>
+
+      <nav class="nav-links" aria-label="Navegação interna">
+        <a href="home.html">
+          <i data-lucide="home"></i>
+          <span>Início</span>
+        </a>
+
+        <a href="prospeccao.html">
+          <i data-lucide="search"></i>
+          <span>Qualificação</span>
+        </a>
+
+        <a href="creditos.html">
+          <i data-lucide="credit-card"></i>
+          <span>Créditos</span>
+        </a>
+        <a href="favoritos.html">
+    <i data-lucide="heart"></i>
+    <span>Favoritos</span>
+  </a>
+      </nav>
+
+      <div class="menu-container">
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="menu-dropdown" id="menuDropdown">
+          <a href="perfil.html" class="menu-item">
+            <i data-lucide="settings"></i>
+            <span>Configurações</span>
+          </a>
+
+          <a href="dados-pessoais.html" class="menu-item">
+            <i data-lucide="user"></i>
+            <span>Perfil</span>
+          </a>
+
+          <a href="favoritos.html" class="menu-item">
+            <i data-lucide="star"></i>
+            <span>Favoritos</span>
+          </a>
+
+          <a href="suporte.html" class="menu-item">
+            <i data-lucide="life-buoy"></i>
+            <span>Suporte</span>
+          </a>
+
+          <a href="index.html" class="menu-item logout">
+            <i data-lucide="log-out"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="section">
+      <div class="container container-wide">
+
+        <!-- TOPO -->
+        <div class="panel favorites-header">
+  <div class="favorites-header-left">
+    <span class="section-label">Leads salvos</span>
+    <h1>Favoritos</h1>
+    <p>Gerencie as empresas priorizadas pela sua operação comercial.</p>
+  </div>
+
+  <div class="favorites-header-right">
+    <div class="favorite-mini-stat">
+      <span>Total</span>
+      <strong>14</strong>
+    </div>
+
+    <div class="favorite-mini-stat">
+      <span>Alta aderência</span>
+      <strong>6</strong>
+    </div>
+
+    <div class="favorite-mini-stat">
+      <span>Com contato</span>
+      <strong>11</strong>
+    </div>
+  </div>
+</div>
+
+        <!-- BARRA DE AÇÕES -->
+        <div class="panel favorites-toolbar animate-up">
+          <div class="favorites-search">
+            <i data-lucide="search"></i>
+            <input type="text" placeholder="Buscar empresa favorita">
+          </div>
+
+          <div class="favorites-filters">
+            <select>
+              <option>Todos os segmentos</option>
+              <option>Tecnologia</option>
+              <option>Serviços</option>
+              <option>Indústria</option>
+              <option>Comércio</option>
+            </select>
+
+            <select>
+              <option>Todos os status</option>
+              <option>Alta aderência</option>
+              <option>Média aderência</option>
+              <option>Baixa aderência</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- LISTA -->
+        <div class="favorites-grid">
+
+          <article class="panel favorite-company-card animate-up">
+            <div class="favorite-company-top">
+              <div>
+                <div class="company-title-row">
+                  <h3>Nova Era Tecnologia Ltda</h3>
+                  <span class="status">Alta aderência</span>
+                </div>
+                <p>Tecnologia • Cuiabá/MT</p>
+              </div>
+
+              <button class="favorite-remove-btn" title="Remover dos favoritos">
+                <i data-lucide="star"></i>
+              </button>
+            </div>
+
+            <div class="favorite-company-contact">
+              <span class="contact-pill">contato@novaera.com</span>
+              <span class="contact-pill">(65) 3333-0001</span>
+              <span class="contact-pill">6201-5/01</span>
+            </div>
+
+            <div class="favorite-company-meta">
+              <div class="mini-field">
+                <span>Score IA</span>
+                <strong>87%</strong>
+              </div>
+
+              <div class="mini-field">
+                <span>Plano ideal</span>
+                <strong>Growth</strong>
+              </div>
+            </div>
+
+            <div class="favorite-actions">
+              <a href="#" class="btn btn-primary">Ver perfil</a>
+              <a href="#" class="btn btn-secondary">Entrar em contato</a>
+            </div>
+          </article>
+
+          <article class="panel favorite-company-card animate-up">
+            <div class="favorite-company-top">
+              <div>
+                <div class="company-title-row">
+                  <h3>Centro Oeste Soluções</h3>
+                  <span class="status">Boa aderência</span>
+                </div>
+                <p>Serviços • Várzea Grande/MT</p>
+              </div>
+
+              <button class="favorite-remove-btn" title="Remover dos favoritos">
+                <i data-lucide="star"></i>
+              </button>
+            </div>
+
+            <div class="favorite-company-contact">
+              <span class="contact-pill">comercial@cosolucoes.com</span>
+              <span class="contact-pill">(65) 3333-0002</span>
+              <span class="contact-pill">9602-5/01</span>
+            </div>
+
+            <div class="favorite-company-meta">
+              <div class="mini-field">
+                <span>Score IA</span>
+                <strong>72%</strong>
+              </div>
+
+              <div class="mini-field">
+                <span>Plano ideal</span>
+                <strong>Start</strong>
+              </div>
+            </div>
+
+            <div class="favorite-actions">
+              <a href="#" class="btn btn-primary">Ver perfil</a>
+              <a href="#" class="btn btn-secondary">Entrar em contato</a>
+            </div>
+          </article>
+
+          <article class="panel favorite-company-card animate-up">
+            <div class="favorite-company-top">
+              <div>
+                <div class="company-title-row">
+                  <h3>Prime Gestão Industrial</h3>
+                  <span class="status">Média aderência</span>
+                </div>
+                <p>Indústria • Rondonópolis/MT</p>
+              </div>
+
+              <button class="favorite-remove-btn" title="Remover dos favoritos">
+                <i data-lucide="star"></i>
+              </button>
+            </div>
+
+            <div class="favorite-company-contact">
+              <span class="contact-pill">atendimento@prime.com</span>
+              <span class="contact-pill">(66) 3333-0003</span>
+              <span class="contact-pill">7020-4/00</span>
+            </div>
+
+            <div class="favorite-company-meta">
+              <div class="mini-field">
+                <span>Score IA</span>
+                <strong>65%</strong>
+              </div>
+
+              <div class="mini-field">
+                <span>Plano ideal</span>
+                <strong>Business</strong>
+              </div>
+            </div>
+
+            <div class="favorite-actions">
+              <a href="#" class="btn btn-primary">Ver perfil</a>
+              <a href="#" class="btn btn-secondary">Entrar em contato</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuDropdown");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      lucide.createIcons();
+    }
+
+    window.addEventListener("click", function(e) {
+      const menu = document.getElementById("menuDropdown");
+      const button = document.querySelector(".menu-toggle");
+
+      if (menu && button && !button.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

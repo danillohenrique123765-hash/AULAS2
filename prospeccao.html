@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prospecção — Vecta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page-bg" aria-hidden="true">
+    <span class="bg-spot bg-spot-1"></span>
+    <span class="bg-spot bg-spot-2"></span>
+    <span class="bg-line bg-line-1"></span>
+    <span class="bg-line bg-line-2"></span>
+    <span class="bg-square bg-square-1"></span>
+    <span class="bg-square bg-square-2"></span>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="home.html" class="logo">VEC<span>TA</span></a>
+
+      <nav class="nav-links" aria-label="Navegação interna">
+        <a href="home.html">
+          <i data-lucide="home"></i>
+          <span>Início</span>
+        </a>
+
+        <a href="prospeccao.html" class="nav-active">
+          <i data-lucide="search"></i>
+          <span>Qualificação</span>
+        </a>
+
+        <a href="creditos.html">
+          <i data-lucide="credit-card"></i>
+          <span>Créditos</span>
+        </a>
+
+        <a href="favoritos.html">
+          <i data-lucide="heart"></i>
+          <span>Favoritos</span>
+        </a>
+      </nav>
+
+      <div class="menu-container">
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="menu-dropdown" id="menuDropdown">
+          <a href="perfil.html" class="menu-item">
+            <i data-lucide="settings"></i>
+            <span>Configurações</span>
+          </a>
+
+          <a href="dados-pessoais.html" class="menu-item">
+            <i data-lucide="user"></i>
+            <span>Perfil</span>
+          </a>
+
+          <a href="suporte.html" class="menu-item">
+            <i data-lucide="life-buoy"></i>
+            <span>Suporte</span>
+          </a>
+
+          <a href="index.html" class="menu-item logout">
+            <i data-lucide="log-out"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-label">Módulo de IA</span>
+          <h1 class="home-title">Pesquisa de empresas</h1>
+          <p>
+            Defina os filtros abaixo para iniciar a prospecção. Os leads aparecerão após a busca e o desbloqueio de cada perfil completo consome 10 créditos.
+          </p>
+          <p class="credit-balance-text">
+  Saldo atual: <strong><span id="creditosUsuario">120</span> créditos</strong>
+</p>
+        </div>
+        
+
+        <div class="prospecting-layout">
+
+          <!-- FILTROS -->
+          <aside class="panel prospecting-sidebar">
+            <div class="home-card-header">
+              <h2>Filtros</h2>
+            </div>
+
+            <form class="internal-form">
+
+              <div class="form-row">
+                <label>Área da empresa</label>
+                <select>
+                  <option disabled selected>Selecione</option>
+                  <option>Tecnologia</option>
+                  <option>Comércio</option>
+                  <option>Indústria</option>
+                  <option>Serviços</option>
+                  <option>Saúde</option>
+                  <option>Educação</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label>Tipo de negócio</label>
+                <select>
+                  <option disabled selected>Selecione</option>
+                  <option>B2B</option>
+                  <option>B2C</option>
+                  <option>Misto</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label>CNAE</label>
+                <input type="text" placeholder="Ex.: 62.01-5-00" />
+              </div>
+
+              <div class="form-row">
+                <label>Estado (UF)</label>
+                <input type="text" placeholder="Ex.: MT" />
+              </div>
+
+              <div class="form-row">
+                <label>Cidade</label>
+                <input type="text" placeholder="Ex.: Cuiabá" />
+              </div>
+
+              <button type="button" class="btn btn-primary full-btn" onclick="mostrarResultados()">
+                Buscar com IA
+              </button>
+
+              <button type="reset" class="btn btn-secondary full-btn">
+                Limpar filtros
+              </button>
+
+            </form>
+          </aside>
+
+          <!-- RESULTADOS ESCONDIDOS INICIALMENTE -->
+          <section class="prospecting-results hidden-results" id="resultsSection">
+
+            <div class="results-header panel">
+              <div class="results-header-top">
+                <div>
+                  <span class="section-label">Resultados da IA</span>
+                  <h2 class="results-title"><strong>18</strong> empresas com maior potencial</h2>
+                  <p>
+                    A pesquisa é gratuita. O consumo de créditos acontece apenas no desbloqueio do perfil completo do lead.
+                  </p>
+                </div>
+                <span class="panel-status">Atualizado agora</span>
+              </div>
+            </div>
+
+            <div class="prospecting-grid">
+
+              <!-- CARD 1 -->
+              <article class="panel prospect-card locked-card" id="lead1">
+                <div class="lead-header">
+                  <div>
+                    <h3>Nova Era Tecnologia Ltda</h3>
+                    <p>Tecnologia • Cuiabá/MT</p>
+                  </div>
+                  <span class="status">Score IA: 87%</span>
+                </div>
+
+                <p class="ai-reason">
+                  Forte compatibilidade com o perfil buscado e boa presença regional.
+                </p>
+
+                <div class="locked-preview">
+                  <div class="blur-line"></div>
+                  <div class="blur-line short"></div>
+                  <div class="blur-line"></div>
+                </div>
+
+                <div class="unlock-box">
+                  <p>Desbloqueie este lead para visualizar contato, CNPJ e dados comerciais.</p>
+                  <button class="btn btn-primary full-btn" onclick="abrirModal('lead1')">
+                    Ver perfil completo — 10 créditos
+                  </button>
+                </div>
+              </article>
+
+              <!-- CARD 2 -->
+              <article class="panel prospect-card locked-card" id="lead2">
+                <div class="lead-header">
+                  <div>
+                    <h3>Centro Oeste Soluções</h3>
+                    <p>Serviços • Várzea Grande/MT</p>
+                  </div>
+                  <span class="status">Score IA: 72%</span>
+                </div>
+
+                <p class="ai-reason">
+                  Boa aderência regional e compatibilidade com o perfil buscado.
+                </p>
+
+                <div class="locked-preview">
+                  <div class="blur-line"></div>
+                  <div class="blur-line short"></div>
+                  <div class="blur-line"></div>
+                </div>
+
+                <div class="unlock-box">
+                  <p>Desbloqueie este lead para visualizar contato, CNPJ e dados comerciais.</p>
+                  <button class="btn btn-primary full-btn" onclick="abrirModal('lead2')">
+                    Ver perfil completo — 10 créditos
+                  </button>
+                </div>
+              </article>
+
+              <!-- CARD 3 -->
+              <article class="panel prospect-card locked-card" id="lead3">
+                <div class="lead-header">
+                  <div>
+                    <h3>Prime Gestão Industrial</h3>
+                    <p>Indústria • Rondonópolis/MT</p>
+                  </div>
+                  <span class="status">Score IA: 65%</span>
+                </div>
+
+                <p class="ai-reason">
+                  Empresa com boa maturidade de mercado, porém com menor aderência ao perfil principal pesquisado.
+                </p>
+
+                <div class="locked-preview">
+                  <div class="blur-line"></div>
+                  <div class="blur-line short"></div>
+                  <div class="blur-line"></div>
+                </div>
+
+                <div class="unlock-box">
+                  <p>Desbloqueie este lead para visualizar contato, CNPJ e dados comerciais.</p>
+                  <button class="btn btn-primary full-btn" onclick="abrirModal('lead3')">
+                    Ver perfil completo — 10 créditos
+                  </button>
+                </div>
+              </article>
+
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <!-- MODAL -->
+<div class="unlock-modal" id="unlockModal">
+  <div class="unlock-modal-card panel">
+    <div class="home-card-header">
+      <h2>Desbloquear perfil</h2>
+      <button class="modal-close-btn" onclick="fecharModal()">×</button>
+    </div>
+
+    <p class="card-description">
+      Este perfil completo consome <strong>10 créditos</strong>. Deseja continuar?
+    </p>
+
+    <div class="hero-card-actions" style="margin-top: 1.25rem;">
+      <button class="btn btn-secondary" onclick="fecharModal()">Cancelar</button>
+      <button class="btn btn-primary" onclick="desbloquearLead()">Confirmar desbloqueio</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let leadAtual = null;
+
+  function inicializarCreditos() {
+    const saldoSalvo = localStorage.getItem("creditos");
+
+    if (saldoSalvo === null || saldoSalvo === "" || isNaN(parseInt(saldoSalvo, 10))) {
+      localStorage.setItem("creditos", "120");
+    }
+  }
+
+  function atualizarCreditosUI() {
+    const creditos = parseInt(localStorage.getItem("creditos") || "0", 10);
+    const el = document.getElementById("creditosUsuario");
+
+    if (el) {
+      el.innerText = creditos;
+    }
+  }
+
+  function comprarCreditosFake() {
+    let creditos = parseInt(localStorage.getItem("creditos") || "0", 10);
+    creditos += 50;
+    localStorage.setItem("creditos", String(creditos));
+    atualizarCreditosUI();
+    alert("Você comprou +50 créditos (simulação)");
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById("menuDropdown");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  function mostrarResultados() {
+    const results = document.getElementById("resultsSection");
+    if (results) {
+      results.classList.add("show-results");
+      results.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function abrirModal(idLead) {
+    leadAtual = idLead;
+    document.getElementById("unlockModal").classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function fecharModal() {
+    document.getElementById("unlockModal").classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  function toggleFavorite(btn) {
+    btn.classList.toggle("active");
+  }
+
+  function desbloquearLead() {
+    if (!leadAtual) return;
+
+    let creditos = parseInt(localStorage.getItem("creditos") || "0", 10);
+
+    if (creditos < 10) {
+      alert("Créditos insuficientes!");
+      fecharModal();
+      return;
+    }
+
+    const dados = {
+      lead1: `
+        <div class="lead-card unlocked">
+          <button class="favorite-btn" onclick="toggleFavorite(this)" aria-label="Favoritar empresa">★</button>
+
+          <div class="lead-header">
+            <div>
+              <h3>Nova Era Tecnologia Ltda</h3>
+              <p>Tecnologia • Cuiabá/MT</p>
+            </div>
+            <span class="status">Score IA: 87%</span>
+          </div>
+
+          <p class="ai-reason">
+            Forte compatibilidade com o perfil buscado, boa presença regional e disponibilidade de contato.
+          </p>
+
+          <div class="lead-contact">
+            <span class="contact-pill">contato@novaera.com</span>
+            <span class="contact-pill">(65) 3333-0001</span>
+            <span class="contact-pill">12.345.678/0001-90</span>
+          </div>
+
+          <div class="mini-dashboard">
+            <div class="mini-dashboard-card">
+              <span>CNAE</span>
+              <strong>6201-5/01</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Score de aderência</span>
+              <strong>87%</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Potencial comercial</span>
+              <strong>79%</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Compatibilidade</span>
+              <strong>Alta</strong>
+            </div>
+          </div>
+
+          <div class="score-block">
+            <div class="score-top">
+              <span>Score de aderência</span>
+              <strong>87%</strong>
+            </div>
+            <div class="score-bar">
+              <div class="score-fill" style="width: 87%"></div>
+            </div>
+          </div>
+        </div>
+      `,
+      lead2: `
+        <div class="lead-card unlocked">
+          <button class="favorite-btn" onclick="toggleFavorite(this)" aria-label="Favoritar empresa">★</button>
+
+          <div class="lead-header">
+            <div>
+              <h3>Centro Oeste Soluções</h3>
+              <p>Serviços • Várzea Grande/MT</p>
+            </div>
+            <span class="status">Score IA: 72%</span>
+          </div>
+
+          <p class="ai-reason">
+            Boa aderência regional e compatibilidade com o perfil buscado.
+          </p>
+
+          <div class="lead-contact">
+            <span class="contact-pill">comercial@cosolucoes.com</span>
+            <span class="contact-pill">(65) 3333-0002</span>
+            <span class="contact-pill">11.222.333/0001-55</span>
+          </div>
+
+          <div class="mini-dashboard">
+            <div class="mini-dashboard-card">
+              <span>CNAE</span>
+              <strong>9602-5/01</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Score de aderência</span>
+              <strong>72%</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Potencial comercial</span>
+              <strong>64%</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Compatibilidade</span>
+              <strong>Boa</strong>
+            </div>
+          </div>
+
+          <div class="score-block">
+            <div class="score-top">
+              <span>Score de aderência</span>
+              <strong>72%</strong>
+            </div>
+            <div class="score-bar">
+              <div class="score-fill" style="width: 72%"></div>
+            </div>
+          </div>
+        </div>
+      `,
+      lead3: `
+        <div class="lead-card unlocked">
+          <button class="favorite-btn" onclick="toggleFavorite(this)" aria-label="Favoritar empresa">★</button>
+
+          <div class="lead-header">
+            <div>
+              <h3>Prime Gestão Industrial</h3>
+              <p>Indústria • Rondonópolis/MT</p>
+            </div>
+            <span class="status">Score IA: 65%</span>
+          </div>
+
+          <p class="ai-reason">
+            Empresa com boa maturidade de mercado, porém com menor aderência ao perfil principal pesquisado.
+          </p>
+
+          <div class="lead-contact">
+            <span class="contact-pill">atendimento@prime.com</span>
+            <span class="contact-pill">(66) 3333-0003</span>
+            <span class="contact-pill">98.765.432/0001-10</span>
+          </div>
+
+          <div class="mini-dashboard">
+            <div class="mini-dashboard-card">
+              <span>CNAE</span>
+              <strong>7020-4/00</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Score de aderência</span>
+              <strong>65%</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Potencial comercial</span>
+              <strong>58%</strong>
+            </div>
+
+            <div class="mini-dashboard-card">
+              <span>Compatibilidade</span>
+              <strong>Média</strong>
+            </div>
+          </div>
+
+          <div class="score-block">
+            <div class="score-top">
+              <span>Score de aderência</span>
+              <strong>65%</strong>
+            </div>
+            <div class="score-bar">
+              <div class="score-fill" style="width: 65%"></div>
+            </div>
+          </div>
+        </div>
+      `
+    };
+
+    creditos -= 10;
+    localStorage.setItem("creditos", String(creditos));
+    atualizarCreditosUI();
+
+    const card = document.getElementById(leadAtual);
+    if (card && dados[leadAtual]) {
+      card.innerHTML = dados[leadAtual];
+      card.classList.remove("locked-card");
+    }
+
+    fecharModal();
+    alert("Perfil desbloqueado com sucesso! (-10 créditos)");
+  }
+
+  window.addEventListener("click", function(e) {
+    const menu = document.getElementById("menuDropdown");
+    const button = document.querySelector(".menu-toggle");
+    const modal = document.getElementById("unlockModal");
+
+    if (menu && button && !button.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = "none";
+    }
+
+    if (modal && modal.classList.contains("active") && e.target === modal) {
+      fecharModal();
+    }
+  });
+
+  inicializarCreditos();
+  atualizarCreditosUI();
+  lucide.createIcons();
+</script>

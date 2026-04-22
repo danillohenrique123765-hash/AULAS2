@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil do Usuário — Vecta</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <span class="bg-spot bg-spot-1"></span>
+    <span class="bg-spot bg-spot-2"></span>
+    <span class="bg-line bg-line-1"></span>
+    <span class="bg-line bg-line-2"></span>
+    <span class="bg-square bg-square-1"></span>
+    <span class="bg-square bg-square-2"></span>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="home.html" class="logo">VEC<span>TA</span></a>
+
+      <nav class="nav-links" aria-label="Navegação interna">
+        <a href="home.html">
+          <i data-lucide="home"></i>
+          <span>Início</span>
+        </a>
+
+        <a href="prospeccao.html">
+          <i data-lucide="search"></i>
+          <span>Qualificação</span>
+        </a>
+
+        <a href="creditos.html">
+          <i data-lucide="credit-card"></i>
+          <span>Créditos</span>
+        </a>
+        <a href="favoritos.html">
+    <i data-lucide="heart"></i>
+    <span>Favoritos</span>
+  </a>
+      </nav>
+
+    <div class="menu-container">
+
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+   <div class="menu-dropdown" id="menuDropdown">
+  <a href="perfil.html" class="menu-item">
+    <i data-lucide="settings"></i>
+    <span>Configurações</span>
+  </a>
+
+  <a href="dados-pessoais.html" class="menu-item">
+    <i data-lucide="user"></i>
+    <span>Perfil</span>
+  </a>
+
+  <a href="suporte.html" class="menu-item">
+    <i data-lucide="life-buoy"></i>
+    <span>Suporte</span>
+  </a>
+
+  <a href="index.html" class="menu-item logout">
+    <i data-lucide="log-out"></i>
+    <span>Sair</span>
+  </a>
+</div>
+
+</div>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="section">
+      <div class="container">
+        <div class="profile-layout">
+          
+          <aside class="profile-sidebar panel">
+            <div class="profile-sidebar-top">
+              <div class="profile-avatar">DH</div>
+              <div>
+                <h2 class="profile-sidebar-name">Danillo Henrique</h2>
+                <p class="profile-sidebar-plan">Conta Growth</p>
+              </div>
+            </div>
+
+            <nav class="profile-side-nav" aria-label="Seções do perfil">
+              <a href="#dados-pessoais" class="profile-side-link">Dados Pessoais</a>
+              <a href="#seguranca" class="profile-side-link">Segurança</a>
+              <a href="#preferencias" class="profile-side-link">Preferências</a>
+            </nav>
+          </aside>
+
+          <section class="profile-content">
+            
+           
+
+            <article id="dados-pessoais" class="panel profile-card">
+              <div class="profile-section-header">
+                <div>
+                  <span class="section-label">Dados Pessoais</span>
+                  <h2>Informações da conta</h2>
+                </div>
+              </div>
+
+              <form class="profile-form">
+                <div class="form-row">
+                  <label for="profile-name">Nome</label>
+                  <input type="text" id="profile-name" value="Danillo Henrique" />
+                </div>
+
+                <div class="form-row">
+                  <label for="profile-email">E-mail</label>
+                  <input type="email" id="profile-email" value="danillo@empresa.com" />
+                </div>
+
+                <div class="form-row">
+                  <label for="profile-phone">Telefone</label>
+                  <input type="tel" id="profile-phone" value="(65) 99999-9999" />
+                </div>
+
+                <button type="button" class="btn btn-primary">Salvar</button>
+              </form>
+            </article>
+
+            <article id="seguranca" class="panel profile-card">
+              <div class="profile-section-header">
+                <div>
+                  <span class="section-label">Segurança</span>
+                  <h2>Proteção da conta</h2>
+                </div>
+              </div>
+
+              <div class="security-grid">
+                <div class="security-box">
+                  <h3>Alterar senha</h3>
+                  <p>Atualize sua senha regularmente para manter a conta protegida.</p>
+                  <button type="button" class="btn btn-secondary">Alterar senha</button>
+                </div>
+
+                <div class="security-box">
+                  <div class="toggle-row">
+                    <div>
+                      <h3>Autenticação em Dois Fatores</h3>
+                      <p>Adicione uma camada extra de segurança no login.</p>
+                    </div>
+
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article id="preferencias" class="panel profile-card">
+              <div class="profile-section-header">
+                <div>
+                  <span class="section-label">Preferências</span>
+                  <h2>Configurações pessoais</h2>
+                </div>
+              </div>
+
+              <div class="preferences-grid">
+                <label class="check-row">
+                  <input type="checkbox" checked />
+                  <span>Receber notificações de marketing</span>
+                </label>
+
+                <label class="check-row">
+                  <input type="checkbox" />
+                  <span>Receber novidades da plataforma por e-mail</span>
+                </label>
+
+                <div class="form-row">
+                  <label for="theme-select">Modo de exibição</label>
+                  <select id="theme-select">
+                    <option selected>Modo Escuro</option>
+                    <option>Modo Claro</option>
+                    <option>Sistema</option>
+                  </select>
+                </div>
+
+                <button type="button" class="btn btn-primary">Salvar preferências</button>
+              </div>
+            </article>
+
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById("menuDropdown");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  // fechar clicando fora
+  window.addEventListener("click", function(e) {
+    const menu = document.getElementById("menuDropdown");
+    const button = document.querySelector(".menu-toggle");
+
+    if (!button.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

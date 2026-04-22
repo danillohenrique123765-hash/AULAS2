@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suporte — Vecta</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <span class="bg-spot bg-spot-1"></span>
+    <span class="bg-spot bg-spot-2"></span>
+    <span class="bg-line bg-line-1"></span>
+    <span class="bg-line bg-line-2"></span>
+    <span class="bg-square bg-square-1"></span>
+    <span class="bg-square bg-square-2"></span>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="home.html" class="logo">VEC<span>TA</span></a>
+
+      <nav class="nav-links" aria-label="Navegação interna">
+        <a href="home.html">
+          <i data-lucide="home"></i>
+          <span>Início</span>
+        </a>
+
+        <a href="prospeccao.html">
+          <i data-lucide="search"></i>
+          <span>Qualificação</span>
+        </a>
+
+        <a href="creditos.html">
+          <i data-lucide="credit-card"></i>
+          <span>Créditos</span>
+        </a>
+        <a href="favoritos.html">
+    <i data-lucide="heart"></i>
+    <span>Favoritos</span>
+  </a>
+      </nav>
+
+      <div class="menu-container">
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+         <div class="menu-dropdown" id="menuDropdown">
+     <a href="perfil.html" class="menu-item">
+       <i data-lucide="settings"></i>
+      <span>Configurações</span>
+    </a>
+
+     <a href="dados-pessoais.html" class="menu-item">
+      <i data-lucide="user"></i>
+      <span>Perfil</span>
+    </a>
+
+      <a href="suporte.html" class="menu-item">
+      <i data-lucide="life-buoy"></i>
+      <span>Suporte</span>
+      </a>
+
+     <a href="index.html" class="menu-item logout">
+      <i data-lucide="log-out"></i>
+      <span>Sair</span>
+     </a>
+    </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Central de suporte</span>
+          <h1 class="home-title">Como podemos ajudar?</h1>
+          <p>
+            Encontre respostas rápidas sobre créditos, prospecção, assinatura e funcionamento da plataforma.
+          </p>
+        </div>
+
+        <div class="support-layout">
+          <section class="support-main">
+            <article class="panel support-card">
+              <div class="support-card-header">
+                <div>
+                  <h2>Perguntas frequentes</h2>
+                  <p class="card-description">
+                    As dúvidas mais comuns dos usuários da plataforma.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-list">
+                <div class="faq-item">
+                  <h3>Como funciona o sistema de créditos?</h3>
+                  <p>
+                    Cada prospecção realizada dentro da plataforma consome créditos da conta. O usuário pode adquirir créditos avulsos ou contratar uma assinatura mensal.
+                  </p>
+                </div>
+
+                <div class="faq-item">
+                  <h3>Quando meus créditos são liberados?</h3>
+                  <p>
+                    Após a confirmação da compra, os créditos são disponibilizados na conta e passam a aparecer no saldo da área interna.
+                  </p>
+                </div>
+
+                <div class="faq-item">
+                  <h3>O que está incluído em uma pesquisa?</h3>
+                  <p>
+                    Uma pesquisa inclui aplicação de filtros, análise dos dados e retorno das empresas com maior potencial, de acordo com os critérios informados.
+                  </p>
+                </div>
+
+                <div class="faq-item">
+                  <h3>Posso cancelar minha assinatura?</h3>
+                  <p>
+                    Sim. A assinatura pode ser cancelada a qualquer momento, e os créditos adquiridos permanecerão disponíveis até o final do período contratado.
+                  </p>
+                </div>
+
+                <div class="faq-item">
+                  <h3>Os dados das empresas são públicos?</h3>
+                  <p>
+                    Sim. As informações retornadas nas pesquisas são coletadas de fontes públicas e atualizadas periodicamente para garantir a melhor qualidade possível.
+                </div>
+              </div>
+            </article>
+
+            <article class="panel support-card">
+              <div class="support-card-header">
+                <div>
+                  <h2>Precisa de ajuda direta?</h2>
+                  <p class="card-description">
+                    Entre em contato por um dos canais abaixo.
+                  </p>
+                </div>
+              </div>
+
+              <div class="support-contact-grid">
+                <div class="support-contact-box">
+                  <i data-lucide="mail"></i>
+                  <div>
+                    <strong>E-mail</strong>
+                    <p>suporte@vecta.com</p>
+                  </div>
+                </div>
+
+                <div class="support-contact-box">
+                  <i data-lucide="phone"></i>
+                  <div>
+                    <strong>Telefone</strong>
+                    <p>(65) 99999-0000</p>
+                  </div>
+                </div>
+
+                <div class="support-contact-box">
+                  <i data-lucide="message-circle"></i>
+                  <div>
+                    <strong>WhatsApp</strong>
+                    <p>Atendimento rápido e direto</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <aside class="support-sidebar">
+            
+            <article class="panel support-side-card">
+              <h2>Horário de atendimento</h2>
+
+              <div class="mini-field">
+                <span>Segunda a sexta</span>
+                <strong>08:00 às 18:00</strong>
+              </div>
+
+              <div class="mini-field" style="margin-top: 0.85rem;">
+                <span>Tempo médio de resposta</span>
+                <strong>Até 2 horas</strong>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuDropdown");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      lucide.createIcons();
+    }
+
+    window.addEventListener("click", function(e) {
+      const menu = document.getElementById("menuDropdown");
+      const button = document.querySelector(".menu-toggle");
+
+      if (menu && button && !button.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>
