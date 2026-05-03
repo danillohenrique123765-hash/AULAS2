@@ -126,8 +126,8 @@
               </div>
 
               <div class="form-row">
-                <label>CNAE</label>
-                <input type="text" placeholder="Ex.: 62.01-5-00" />
+                <label>Tipo de empresa</label>
+                <input type="text" id="tipoEmpresa" placeholder="Ex: loja de roupas, clínica, academia..." />
               </div>
 
               <div class="form-row">
@@ -315,12 +315,44 @@
   }
 
   function mostrarResultados() {
-    const results = document.getElementById("resultsSection");
-    if (results) {
-      results.classList.add("show-results");
-      results.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  const tipo = document.getElementById("tipoEmpresa").value.toLowerCase();
+  const cidade = document.querySelector('input[placeholder*="Cuiabá"]').value;
+
+  if (!tipo) {
+    alert("Digite o tipo de empresa!");
+    return;
   }
+
+  // 🔥 SIMULAÇÃO INTELIGENTE (tipo IA)
+  let resultados = [];
+
+  if (tipo.includes("tecnologia")) {
+    resultados = ["lead1"];
+  } else if (tipo.includes("serviço") || tipo.includes("assist")) {
+    resultados = ["lead2"];
+  } else if (tipo.includes("indústria")) {
+    resultados = ["lead3"];
+  } else {
+    resultados = ["lead1", "lead2"]; // fallback
+  }
+
+  // Mostrar seção
+  const results = document.getElementById("resultsSection");
+  results.classList.add("show-results");
+
+  // Esconder todos
+  document.querySelectorAll(".prospect-card").forEach(card => {
+    card.style.display = "none";
+  });
+
+  // Mostrar filtrados
+  resultados.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = "block";
+  });
+
+  results.scrollIntoView({ behavior: "smooth" });
+}
 
   function abrirModal(idLead) {
     leadAtual = idLead;
@@ -373,11 +405,6 @@
 
           <div class="mini-dashboard">
             <div class="mini-dashboard-card">
-              <span>CNAE</span>
-              <strong>6201-5/01</strong>
-            </div>
-
-            <div class="mini-dashboard-card">
               <span>Score de aderência</span>
               <strong>87%</strong>
             </div>
@@ -428,11 +455,6 @@
 
           <div class="mini-dashboard">
             <div class="mini-dashboard-card">
-              <span>CNAE</span>
-              <strong>9602-5/01</strong>
-            </div>
-
-            <div class="mini-dashboard-card">
               <span>Score de aderência</span>
               <strong>72%</strong>
             </div>
@@ -482,11 +504,6 @@
           </div>
 
           <div class="mini-dashboard">
-            <div class="mini-dashboard-card">
-              <span>CNAE</span>
-              <strong>7020-4/00</strong>
-            </div>
-
             <div class="mini-dashboard-card">
               <span>Score de aderência</span>
               <strong>65%</strong>
